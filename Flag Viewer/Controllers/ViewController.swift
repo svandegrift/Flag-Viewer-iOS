@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UITableViewController {
 
     var flags = [String]()
+    var imageString = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,17 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FlagCell", for: indexPath)
         cell.textLabel?.text = flags[indexPath.row].uppercased()        
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        imageString = flags[indexPath.row]
+        performSegue(withIdentifier: "FlagTransition", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? DetailViewController {
+            vc.imageName = imageString
+        }
     }
 
 }

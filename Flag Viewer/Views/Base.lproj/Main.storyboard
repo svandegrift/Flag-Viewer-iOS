@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17147" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fPd-Vu-NMX">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17120"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -14,7 +14,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ILO-00-gFY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="fPd-Vu-NMX" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="BSE-GC-89k">
-                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -29,15 +29,15 @@
             <objects>
                 <tableViewController id="6uV-aZ-AY9" customClass="ViewController" customModule="Flag_Viewer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="l4Z-4j-UPJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="FlagCell" id="AZ7-N8-PqR">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AZ7-N8-PqR" id="A2S-in-K1x">
-                                    <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="347.66666666666669" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -48,28 +48,46 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="🇯🇵 Flag Viewer 🇺🇸" largeTitleDisplayMode="always" id="mcw-6v-B25"/>
+                    <connections>
+                        <segue destination="865-vb-AKf" kind="show" identifier="FlagTransition" id="6va-h2-3O5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iIp-Ub-s9M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-20.289855072463769" y="97.767857142857139"/>
+            <point key="canvasLocation" x="55" y="98"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="XN5-l7-omv">
             <objects>
                 <viewController id="865-vb-AKf" customClass="DetailViewController" customModule="Flag_Viewer" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mcV-h9-zkY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="mcV-h9-zkY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="germany" id="oKM-mn-j0V">
+                                <rect key="frame" x="52" y="336" width="271" height="141"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="kVs-Eo-7m3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oKM-mn-j0V" firstAttribute="centerY" secondItem="mcV-h9-zkY" secondAttribute="centerY" id="6xL-Bq-Hal"/>
+                            <constraint firstItem="oKM-mn-j0V" firstAttribute="centerX" secondItem="mcV-h9-zkY" secondAttribute="centerX" id="JAb-Ez-dcT"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Sde-6p-LOO"/>
+                    <connections>
+                        <outlet property="image" destination="oKM-mn-j0V" id="cHk-7g-DzY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8W-wg-d5z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="796" y="98"/>
+            <point key="canvasLocation" x="794.39999999999998" y="97.536945812807886"/>
         </scene>
     </scenes>
     <resources>
+        <image name="germany" width="200" height="100"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
